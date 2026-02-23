@@ -6,6 +6,7 @@ import maintenanceImg from '../assets/maintenance.png';
 import officeImg from '../assets/office2.png';
 import redesignImg from '../assets/Redesign.png';
 import BrandingSection from '../components/BrandingSection.jsx';
+import SEO from '../components/SEO.jsx';
 import '../styles/Home.css';
 
 /* ------------------ ANIMATIONS ------------------ */
