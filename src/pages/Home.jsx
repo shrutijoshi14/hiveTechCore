@@ -30,6 +30,10 @@ const staggerContainer = {
 export default function Home() {
   return (
     <main className="home">
+      <SEO
+        title="Innovating the Digital Future"
+        description="Hive Tech Core delivers premium web and software engineering solutions for startups and enterprises worldwide. We turn vision into scalable reality."
+      />
       {/* PREMIUM HERO */}
       <section className="hero-premium">
         <div className="hero-overlay"></div>
