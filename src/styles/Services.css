@@ -1,0 +1,240 @@
+/* ================================
+   SERVICES PAGE
+================================ */
+.services-page {
+  padding: 120px 0 100px;
+  background: var(--bg-deep);
+}
+
+.services-hero {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.services-hero h1 {
+  font-size: clamp(36px, 6vw, 56px);
+  margin-bottom: 24px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .service-grid {
+    gap: 20px;
+  }
+}
+
+/* ================================
+   SERVICE CARD
+================================ */
+.service-card {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  filter: grayscale(0.2);
+}
+
+.card-content {
+  padding: 24px;
+}
+
+.card-content h2 {
+  font-size: 20px;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.card-content p {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ================================
+   SERVICE DETAIL PAGE
+================================ */
+.detail {
+  padding: 120px 0;
+  min-height: 100vh;
+  background: var(--bg-deep);
+  overflow-x: hidden;
+}
+
+.detail-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+@media (max-width: 968px) {
+  .detail-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.detail-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ================================
+   ADDONS & PLANS
+================================ */
+.plan-block {
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 24px;
+  background: var(--glass);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  color: #fff;
+}
+
+.plan-block h2 {
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.plan-block:hover {
+  border-color: var(--primary);
+  transform: translateY(-4px);
+}
+
+.plan-block.active {
+  border-color: var(--primary);
+  background: rgba(255, 183, 3, 0.05);
+  box-shadow: 0 12px 30px rgba(255, 183, 3, 0.1);
+}
+
+.addon-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  color: var(--text-main);
+}
+
+.addon-item:hover {
+  border-color: var(--primary);
+}
+
+.billing-note p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+/* ================================
+   PRICING
+================================ */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.pricing-card {
+  padding: 48px 32px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.pricing-card.featured {
+  border-color: var(--primary);
+  background: rgba(255, 183, 3, 0.05);
+  transform: scale(1.05);
+}
+
+.popular-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--primary);
+  color: #000;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pricing-card h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.pricing-card .price {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.pkg-target {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.pkg-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  text-align: left;
+}
+
+.pkg-features li {
+  margin-bottom: 16px;
+  color: var(--text-main);
+  font-size: 15px;
+  position: relative;
+  padding-left: 24px;
+}
+
+.pkg-features li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+.pricing-card .btn-gold,
+.pricing-card .btn-outline-gold {
+  margin-top: auto; /* Push buttons to bottom of card */
+  font-size: 15px;
+  padding: 12px 24px;
+}
+
+@media (max-width: 768px) {
+  .pricing-card.featured {
+    transform: none;
+    margin: 20px 0;
+  }
+}

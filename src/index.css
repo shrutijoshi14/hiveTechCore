@@ -1,0 +1,93 @@
+@import './styles/variables.css';
+@import './styles/components.css';
+@import './styles/navbar.css';
+@import './styles/animations.css';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  font-family:
+    'Inter',
+    system-ui,
+    -apple-system,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip; /* Prefer clip over hidden for modern browsers */
+  scroll-behavior: smooth;
+}
+
+#root {
+  overflow-x: clip;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  overflow-wrap: break-word; /* Prevent long words from breaking layout */
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+@media (max-width: 968px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+section {
+  overflow-x: clip; /* Guard every section against animation-induced overflow */
+}
+
+/* Glassmorphism Utility */
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+}
+
+.rounded-img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(255, 183, 3, 0.1);
+  color: var(--primary);
+  border: 1px solid var(--primary-glow);
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+}

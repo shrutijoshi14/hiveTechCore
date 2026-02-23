@@ -1,0 +1,93 @@
+.hq-banner {
+  width: 1584px;
+  height: 396px;
+  background: #02111b;
+  color: #fff;
+  display: flex;
+  padding: 60px 80px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.banner-left {
+  flex: 1;
+  z-index: 2;
+}
+
+.brand-tag {
+  color: #ffb703;
+  letter-spacing: 4px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.hq-banner h1 {
+  font-size: 72px;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.hq-banner h1 span {
+  color: #ffb703;
+}
+
+.hq-banner p {
+  font-size: 24px;
+  color: #8e9aaf;
+  margin-bottom: 40px;
+  line-height: 1.4;
+}
+
+.stats {
+  display: flex;
+  gap: 40px;
+}
+
+.stat {
+  font-size: 18px;
+  color: #8e9aaf;
+}
+
+.stat span {
+  color: #fff;
+  font-weight: 800;
+  display: block;
+  font-size: 24px;
+}
+
+.banner-right {
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+  max-width: 300px;
+}
+
+.tech-stack span {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.cta-overlay {
+  margin-top: 40px;
+  background: #ffb703;
+  color: #000;
+  padding: 12px 24px;
+  font-weight: 800;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 14px;
+}

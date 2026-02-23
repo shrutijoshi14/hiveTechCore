@@ -1,0 +1,49 @@
+.branding-premium-section {
+  padding: 80px 0;
+  background: var(--bg-deep);
+}
+
+.branding-container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 60px 0;
+}
+
+@media (max-width: 768px) {
+  .branding-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 24px;
+    gap: 32px;
+  }
+}
+
+.branding-logo-wrapper {
+  flex-shrink: 0;
+}
+
+.branding-logo {
+  width: clamp(150px, 20vw, 250px);
+  filter: drop-shadow(0 0 30px var(--primary-glow));
+  object-fit: contain;
+}
+
+.branding-content h1 {
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.branding-content h1 span {
+  color: var(--primary);
+}
+
+.branding-lead {
+  font-size: clamp(16px, 1.5vw, 20px);
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 600px;
+}

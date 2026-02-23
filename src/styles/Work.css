@@ -1,0 +1,141 @@
+.work-page {
+  background: var(--bg-deep);
+  min-height: 100vh;
+  color: var(--text-main);
+  padding-top: 80px; /* Aligned with navbar height */
+}
+
+/* HERO */
+.work-hero {
+  padding: 80px 0 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.work-hero h1 {
+  font-size: clamp(32px, 6vw, 48px);
+  margin-bottom: 16px;
+  color: #fff;
+  font-weight: 800;
+}
+
+.work-hero h1 span {
+  color: var(--primary);
+}
+
+.work-hero p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+/* GRID */
+.work-grid {
+  padding: 40px 0 120px;
+}
+
+.grid-stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.work-card {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.work-img-wrapper {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.work-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.work-card:hover .work-img-wrapper img {
+  transform: scale(1.1);
+}
+
+.category-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--primary);
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.work-card-content {
+  padding: 32px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-stack-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.work-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.5);
+}
+
+.work-card h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.work-card span {
+  font-size: 14px;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.work-desc {
+  font-size: 16px;
+  color: var(--text-main);
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .work-grid {
+    padding: 40px 24px;
+  }
+}

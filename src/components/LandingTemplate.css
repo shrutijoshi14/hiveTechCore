@@ -1,0 +1,60 @@
+.landing-template {
+  min-height: 100vh;
+  color: #333;
+}
+
+.template-hero {
+  padding: 160px 0 100px;
+  text-align: center;
+}
+
+.template-hero h1 {
+  font-size: clamp(32px, 5vw, 64px);
+  margin-bottom: 24px;
+}
+
+.theme-corporate {
+  --primary: #2563eb;
+  background: #f8fafc;
+}
+
+.theme-ecommerce {
+  --primary: #ec4899;
+  background: #ffffff;
+}
+
+.theme-restaurant {
+  --primary: #854d0e;
+  background: #fffbef;
+}
+
+.template-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.template-card {
+  padding: 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.template-cta {
+  padding: 100px 0;
+  text-align: center;
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}

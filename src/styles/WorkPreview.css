@@ -1,0 +1,37 @@
+.work-preview {
+  padding: 100px 5%; /* Slightly more flexible padding */
+  background: #0b0d12;
+  text-align: center;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.work-preview h2 {
+  font-size: 2.4rem;
+  color: #f7c948;
+  margin-bottom: 40px;
+}
+
+.work-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+.preview-card {
+  background: rgba(255, 215, 115, 0.05);
+  border: 1px solid rgba(255, 215, 115, 0.2);
+  border-radius: 16px;
+  padding: 30px;
+}
+
+.preview-card h3 {
+  color: #ffd773;
+  margin-bottom: 10px;
+}
+
+.preview-card span {
+  font-size: 0.85rem;
+  color: #aaa;
+}

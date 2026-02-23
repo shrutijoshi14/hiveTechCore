@@ -1,0 +1,11 @@
+:root {
+  --primary: #ffb703; /* Premium Gold */
+  --primary-glow: rgba(255, 183, 3, 0.4);
+  --bg-deep: #02111b; /* Deep Navy/Charcoal */
+  --bg-surface: #051f2e; /* Lighter Navy for cards */
+  --text-main: #ffffff; /* pure white for h tags */
+  --text-muted: #b0b8c4; /* Brightened for perfection */
+  --accent: #fb8500; /* Vibrant Orange/Gold */
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
