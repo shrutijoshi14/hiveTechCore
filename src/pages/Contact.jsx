@@ -3,6 +3,20 @@ import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import '../styles/Contact.css';
 
+const SuccessUI = () => (
+  <motion.div
+    className="success-box glass-card"
+    initial={{ opacity: 0, scale: 0.9 }}
+    animate={{ opacity: 1, scale: 1 }}
+  >
+    <div className="success-icon">✓</div>
+    <h2>Transmission Received</h2>
+    <p>
+      Our strategy team will contact you within <strong>24 hours</strong> to discuss your vision.
+    </p>
+  </motion.div>
+);
+
 export default function Contact() {
   const location = useLocation();
   const data = location.state;
@@ -18,20 +32,6 @@ export default function Contact() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
-
-  const SuccessUI = () => (
-    <motion.div
-      className="success-box glass-card"
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-    >
-      <div className="success-icon">✓</div>
-      <h2>Transmission Received</h2>
-      <p>
-        Our strategy team will contact you within <strong>24 hours</strong> to discuss your vision.
-      </p>
-    </motion.div>
-  );
 
   return (
     <main className="contact-page-wrapper">
