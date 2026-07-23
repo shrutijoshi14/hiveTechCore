@@ -1,39 +1,52 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import customImg from '../assets/custom.png';
-import landingImg from '../assets/landing.png';
-import maintenanceImg from '../assets/maintenance.png';
 import officeImg from '../assets/office2.png';
 import redesignImg from '../assets/Redesign.png';
+import standardImg from '../assets/standard.png';
 import BrandingSection from '../components/BrandingSection.jsx';
+import ProcessSection from '../components/ProcessSection.jsx';
 import SEO from '../components/SEO.jsx';
 import '../styles/Home.css';
 
-/* ------------------ ANIMATIONS ------------------ */
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
-  },
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.2 },
-  },
-};
-
 /* ------------------ HOME ------------------ */
 export default function Home() {
+  const featuredProjects = [
+    {
+      id: 'crm-cms',
+      title: 'Hive CRM & CMS Platform',
+      tech: 'React · Node.js · Automation',
+      description: 'Unified customer relations and dynamic content management platform.',
+      img: customImg,
+    },
+    {
+      id: 'gpshele-dadhare',
+      title: 'GPShele Dadhare Website',
+      tech: 'React · Dynamic CMS Portal',
+      description: 'Official digital portal engineered for GPShele Dadhare.',
+      img: standardImg,
+    },
+    {
+      id: 'code-insight-academy',
+      title: 'Code Insight Academy',
+      tech: 'React · LMS · Student Portal',
+      description: 'Interactive ed-tech academy platform and course management system.',
+      img: redesignImg,
+    },
+    {
+      id: 'pib-insurance',
+      title: 'PIB Insurance Portal',
+      tech: 'React · Financial Quote Engine',
+      description: 'Comprehensive insurance portal with instant quote calculation.',
+      img: officeImg,
+    },
+  ];
+
   return (
     <main className="home">
       <SEO
-        title="Innovating the Digital Future"
-        description="Hive Tech Core delivers premium web and software engineering solutions for startups and enterprises worldwide. We turn vision into scalable reality."
+        title="HiveTechCore | Building Websites. Powering Business Automation."
+        description="HiveTechCore helps businesses establish a strong digital presence with modern websites, ERPs, CRMs, School Management Systems, and AI business automation."
       />
       {/* PREMIUM HERO */}
       <section className="hero-premium">
@@ -41,17 +54,18 @@ export default function Home() {
         <div className="hero-image-bg" style={{ backgroundImage: `url(${officeImg})` }}></div>
 
         <div className="container hero-container">
-          <motion.div className="hero-content" initial="hidden" animate="visible" variants={fadeUp}>
-            <div className="badge">Next-Gen Web Solutions</div>
-            <h1>
-              Innovative Technology <br />
-              <span>Built for Excellence</span>
+          <div className="hero-content">
+            <div className="badge" data-aos="fade-up" data-aos-delay="200">
+              Building Websites. Powering Business Automation.
+            </div>
+            <h1 data-aos="fade-up" data-aos-delay="400">
+              Technology Built <br />
+              <span>To Work Smarter</span>
             </h1>
-            <p className="hero-lead">
-              We engineer high-performance, secure, and sophisticated digital experiences that
-              empower your business to dominate the digital landscape.
+            <p className="hero-lead" data-aos="fade-up" data-aos-delay="600">
+              We design and develop modern, high-performance websites and intelligent digital solutions—from ERPs & CRMs to AI-powered automation systems.
             </p>
-            <div className="hero-actions">
+            <div className="hero-actions" data-aos="fade-up" data-aos-delay="800">
               <Link to="/contact">
                 <motion.button
                   className="btn-gold"
@@ -62,10 +76,10 @@ export default function Home() {
                 </motion.button>
               </Link>
               <Link to="/work" className="btn-text">
-                Explore Our Portfolio →
+                Explore Projects →
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         <div className="hero-scroll-indicator">
@@ -78,131 +92,107 @@ export default function Home() {
       </section>
 
       {/* BRANDING SNIPPET */}
-      <BrandingSection />
+      <div data-aos="fade-up">
+        <BrandingSection />
+      </div>
 
-      {/* PREMIUM SERVICES */}
-      <section className="services-premium">
+      {/* FEATURED PROJECTS SHOWCASE */}
+      <section className="services-premium" style={{ background: 'var(--bg-surface)' }}>
         <div className="container">
-          <motion.div
-            className="section-header"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-          >
-            <h2 className="section-title">Operational Excellence</h2>
+          <div className="section-header" data-aos="fade-up">
+            <div className="badge">Featured Deliveries</div>
+            <h2 className="section-title">Our Recent Projects</h2>
             <p className="section-subtitle">
-              Comprehensive development solutions tailored to your unique business DNA.
+              Explore solutions built for businesses, educational academies, and enterprise platforms.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            className="services-grid"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            variants={staggerContainer}
-          >
-            {[
-              {
-                title: 'Custom Architectures',
-                desc: 'Scalable React-driven applications built with precision and future-proof code.',
-                img: customImg,
-              },
-              {
-                title: 'Lead-Gen Landing Pages',
-                desc: 'High-conversion entries designed to turn visitors into loyal customers.',
-                img: landingImg,
-              },
-              {
-                title: 'UI/UX Transformation',
-                desc: 'Breathe new life into legacy systems with world-class design standards.',
-                img: redesignImg,
-              },
-              {
-                title: 'Strategic Maintenance',
-                desc: 'Continuous optimization and security monitoring for peak performance.',
-                img: maintenanceImg,
-              },
-            ].map((service, idx) => (
-              <motion.div key={idx} className="glass-card service-card" variants={fadeUp}>
+          <div className="services-grid">
+            {featuredProjects.map((proj, idx) => (
+              <motion.div
+                key={idx}
+                className="glass-card service-card"
+                data-aos="fade-up"
+                data-aos-delay={idx * 120}
+                whileHover={{ y: -8 }}
+              >
                 <div className="card-img-wrapper">
-                  <img src={service.img} alt={service.title} />
+                  <img src={proj.img} alt={proj.title} />
                 </div>
                 <div className="card-body">
-                  <h3>{service.title}</h3>
-                  <p>{service.desc}</p>
-                  <Link to={`/services`} className="btn-text">
-                    Learn More →
+                  <h3>{proj.title}</h3>
+                  <span className="tech-tag" style={{ color: 'var(--primary)', fontSize: '13px', display: 'block', marginBottom: '8px' }}>{proj.tech}</span>
+                  <p>{proj.description}</p>
+                  <Link to={`/work/${proj.id}`} className="btn-text">
+                    View Demo →
                   </Link>
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
+          
+          <div style={{ textAlign: 'center', marginTop: '40px' }}>
+            <Link to="/work">
+              <button className="btn-outline-gold">View All Portfolio Projects →</button>
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* WHY US / TRUST (Refined existing section) */}
+      {/* DEVELOPMENT PROCESS */}
+      <ProcessSection />
+
+      {/* WHY US / TRUST */}
       <section className="trust-premium">
         <div className="container grid-2">
-          <motion.div
-            className="trust-content"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-          >
-            <h2 className="section-title text-left">The Hive Tech Core Advantage</h2>
+          <div className="trust-content" data-aos="fade-right">
+            <h2 className="section-title text-left">The HiveTechCore Advantage</h2>
             <p className="lead-text">
-              We don't just build websites; we construct digital ecosystems that drive results.
+              We don't just build software—we build technology that helps businesses work smarter.
             </p>
             <ul className="advantages-list">
-              <li>
-                <strong>Strategic Engineering:</strong> Every line of code serves a business goal.
+              <li data-aos="fade-right" data-aos-delay="200">
+                <strong>Business Process Automation:</strong> Save time, eliminate manual repetition, and boost productivity.
               </li>
-              <li>
-                <strong>Security First:</strong> Enterprise-grade protection for your data and
-                users.
+              <li data-aos="fade-right" data-aos-delay="400">
+                <strong>Secure & Scalable Architecture:</strong> Future-ready cloud infrastructure designed to grow with your organization.
               </li>
-              <li>
-                <strong>Scalable Growth:</strong> Architecture that expands alongside your success.
+              <li data-aos="fade-right" data-aos-delay="600">
+                <strong>End-to-End Solutions:</strong> From web design and CRM/ERP development to ongoing maintenance & support.
               </li>
             </ul>
-            <Link to="/about">
-              <button className="btn-outline-gold">About Our Process</button>
-            </Link>
-          </motion.div>
-          <motion.div
-            className="trust-visual"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          >
-            <div className="experience-badge glass-card">
-              <span className="number">5+</span>
-              <span className="label">Years of Innovation</span>
+            <div data-aos="fade-up" data-aos-delay="800">
+              <Link to="/about">
+                <button className="btn-gold">Discover Our Story</button>
+              </Link>
             </div>
-            <img src={officeImg} alt="Hive Tech Core HQ" className="rounded-img" />
-          </motion.div>
+          </div>
+          <div className="trust-visual" data-aos="zoom-in" data-aos-duration="1200">
+            <div className="experience-badge glass-card" data-aos="fade-down" data-aos-delay="400">
+              <span className="number">100%</span>
+              <span className="label">Future-Ready Tech</span>
+            </div>
+            <img src={officeImg} alt="HiveTechCore Technology" className="rounded-img" />
+          </div>
         </div>
       </section>
 
       {/* FINAL CTA */}
       <section className="premium-final-cta">
         <div className="container">
-          <motion.div
-            className="cta-glass-box"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-          >
-            <h2>Ready to Evolve Your Digital Presence?</h2>
-            <p>Join the leaders who trust Hive Tech Core for their most ambitious projects.</p>
-            <Link to="/contact">
-              <button className="btn-gold large">Get Your Free Consultation</button>
-            </Link>
-          </motion.div>
+          <div className="cta-glass-box" data-aos="zoom-in">
+            <h2 data-aos="fade-up" data-aos-delay="200">
+              Ready to Simplify Your Business Operations?
+            </h2>
+            <p data-aos="fade-up" data-aos-delay="400">
+              Let's create secure, high-performance websites and automated systems for your growth.
+            </p>
+            <div data-aos="fade-up" data-aos-delay="600">
+              <Link to="/contact">
+                <button className="btn-gold large">Get a Free Consultation</button>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </main>

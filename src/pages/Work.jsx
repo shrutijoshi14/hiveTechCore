@@ -1,103 +1,140 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import basicImg from '../assets/basic.png';
+import customImg from '../assets/custom.png';
 import ecommerceImg from '../assets/ecommerce.png';
 import landingImg from '../assets/landing.png';
 import officeImg from '../assets/office2.png';
+import redesignImg from '../assets/Redesign.png';
 import standardImg from '../assets/standard.png';
+import SEO from '../components/SEO';
 import '../styles/Work.css';
 
 export default function Work() {
+  const [activeCategory, setActiveCategory] = useState('All');
+
   const projects = [
     {
-      id: 'corporate',
-      title: 'OmniConnect Enterprise',
-      tech: 'React · Node.js · Cloud Architecture',
+      id: 'crm-cms',
+      title: 'Hive CRM & CMS Platform',
+      tech: 'React · Node.js · PostgreSQL · Automation',
       description:
-        'A high-performance corporate platform with scalable backend and secure data pipelines.',
-      category: 'Corporate',
-      img: officeImg,
+        'All-in-one Customer Relationship and Content Management platform. Manages leads, client communication, dynamic page publishing, and business analytics in a unified dashboard.',
+      category: 'Business Software',
+      img: customImg,
+      featured: true,
     },
     {
-      id: 'ecommerce',
-      title: 'LuxeWatches Storefront',
-      tech: 'React · Redux · Payment API',
+      id: 'gpshele-dadhare',
+      title: 'GPShele Dadhare Website',
+      tech: 'React · Dynamic CMS · High Performance Portal',
       description:
-        'A premium e-commerce experience featuring real-time inventory and seamless checkout.',
-      category: 'E-Commerce',
-      img: ecommerceImg,
-    },
-    {
-      id: 'restaurant',
-      title: 'Sage & Salt Bistro',
-      tech: 'React · Framer Motion · Booking API',
-      description: 'An interactive culinary experience with dynamic menus and reservation systems.',
-      category: 'Restaurant',
-      img: landingImg,
-    },
-    {
-      id: 'local-business',
-      title: 'Peak Physique Gym',
-      tech: 'React · Local SEO · Schedules',
-      description:
-        'A conversion-focused landing page for local fitness centers with class booking blocks.',
-      category: 'Local Business',
+        'Official digital portal designed for GPShele Dadhare featuring an elegant design system, fast page load speeds, mobile responsiveness, and easy institutional content updates.',
+      category: 'Websites',
       img: standardImg,
+      featured: true,
     },
     {
-      id: 'personal-brand',
-      title: 'Alex Creative Portfolio',
-      tech: 'React · GSAP · Blog CMS',
+      id: 'code-insight-academy',
+      title: 'Code Insight Academy',
+      tech: 'React · LMS · Student Portal · Streaming',
       description:
-        'A high-end personal brand layout with integrated blogging and project showcases.',
-      category: 'Personal Brand',
-      img: basicImg,
+        'Modern ed-tech learning management platform with course catalogs, interactive lessons, student progress tracking, certification workflows, and live batch management.',
+      category: 'EdTech & Portals',
+      img: redesignImg,
+      featured: true,
+    },
+    {
+      id: 'pib-insurance',
+      title: 'PIB Insurance Portal',
+      tech: 'React · Financial APIs · Instant Quote Engine',
+      description:
+        'Secure insurance platform for policy comparison, instant premium estimation, automated claim filings, customer portals, and enterprise lead routing.',
+      category: 'FinTech & Insurance',
+      img: officeImg,
+      featured: true,
     },
   ];
 
+  const categories = ['All', 'Business Software', 'Websites', 'EdTech & Portals', 'FinTech & Insurance'];
+
+  const filteredProjects = projects.filter((p) => {
+    if (activeCategory === 'All') return true;
+    if (activeCategory === 'Featured') return p.featured;
+    return p.category === activeCategory;
+  });
+
   return (
     <main className="work-page">
+      <SEO
+        title="Our Projects & Portfolio | HiveTechCore"
+        description="Explore projects built by HiveTechCore including CRM & CMS platforms, GPShele Dadhare website, Code Insight Academy portal, PIB Insurance platform, and custom web applications."
+      />
+
       {/* HERO */}
       <section className="work-hero">
         <div className="container">
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-            What We Build
-          </motion.h1>
+          <div data-aos="fade-up">
+            <div className="badge">Engineering Excellence</div>
+            <h1>
+              Our Featured <span>Projects & Solutions</span>
+            </h1>
+            <p data-aos="fade-up" data-aos-delay="200">
+              Explore our portfolio of high-impact web applications, enterprise CRM & CMS systems, educational platforms, and custom business automation portals.
+            </p>
+          </div>
 
-          <p>
-            A collection of demo projects and digital solutions built with performance and
-            scalability.
-          </p>
+          {/* CATEGORY FILTERS */}
+          <div className="work-filters" data-aos="fade-up" data-aos-delay="300">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                className={`filter-btn ${activeCategory === cat ? 'active' : ''}`}
+                onClick={() => setActiveCategory(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* PROJECT GRID */}
       <section className="work-grid">
         <div className="container">
-          <div className="grid-stack">
-            {projects.map((item, index) => (
-              <motion.div
-                key={index}
-                className="work-card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
-              >
-                <div className="work-img-wrapper">
-                  <img src={item.img} alt={item.title} />
-                  <div className="category-badge">{item.category}</div>
-                </div>
-                <div className="work-card-content">
-                  <h3>{item.title}</h3>
-                  <span className="tech-stack-label">{item.tech}</span>
-                  <p className="work-desc">{item.description}</p>
-                  <Link to={`/work/${item.id}`}>
-                    <button className="btn-text">View Live Demo →</button>
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          <motion.div layout className="grid-stack">
+            <AnimatePresence>
+              {filteredProjects.map((item) => (
+                <motion.div
+                  layout
+                  key={item.id}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.4 }}
+                  className="work-card glass-card"
+                  whileHover={{ y: -8 }}
+                >
+                  <div className="work-img-wrapper">
+                    <img src={item.img} alt={item.title} />
+                    <div className="category-badge">{item.category}</div>
+                    {item.featured && <div className="featured-ribbon">Featured</div>}
+                  </div>
+                  <div className="work-card-content">
+                    <h3>{item.title}</h3>
+                    <span className="tech-stack-label">{item.tech}</span>
+                    <p className="work-desc">{item.description}</p>
+                    <div className="work-card-footer">
+                      <Link to={`/work/${item.id}`}>
+                        <button className="btn-text">Explore Project Details →</button>
+                      </Link>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
         </div>
       </section>
     </main>

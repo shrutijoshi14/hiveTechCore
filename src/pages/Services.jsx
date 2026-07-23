@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import PricingCalculator from '../components/PricingCalculator';
 import ServiceCard from '../components/ServiceCard';
 import '../styles/Services.css';
@@ -103,24 +104,30 @@ export default function Services() {
       <div className="container">
         {/* HERO */}
         <div className="services-hero">
-          <h1>
+          <h1 data-aos="fade-up">
             Solutions <span>Engineered for Growth</span>
           </h1>
-          <p className="lead-desc">
+          <p className="lead-desc" data-aos="fade-up" data-aos-delay="200">
             From high-performance business architectures to secure e-commerce ecosystems, we
             engineer digital solutions that scale with your success.
           </p>
         </div>
 
         {/* PRICING PACKAGES */}
-        <div className="section-header">
+        <div className="section-header" data-aos="fade-up">
           <h2 className="section-title">Strategic Packages</h2>
           <p className="section-subtitle">Fixed-price engineering designed for business clarity.</p>
         </div>
 
         <div className="pricing-grid">
           {packages.map((pkg, idx) => (
-            <div key={idx} className={`pricing-card glass-card ${pkg.highlight ? 'featured' : ''}`}>
+            <motion.div
+              key={idx}
+              className={`pricing-card glass-card ${pkg.highlight ? 'featured' : ''}`}
+              data-aos="fade-up"
+              data-aos-delay={idx * 150}
+              whileHover={{ y: -10 }}
+            >
               {pkg.highlight && <div className="popular-badge">Most Popular</div>}
               <h3>{pkg.name}</h3>
               <div className="price">{pkg.price}</div>
@@ -133,27 +140,36 @@ export default function Services() {
               <button className={`btn-${pkg.highlight ? 'gold' : 'outline-gold'}`}>
                 Choose {pkg.name}
               </button>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* INTERACTIVE CALCULATOR */}
-        <div className="section-header" style={{ marginTop: '120px' }}>
+        <div className="section-header" style={{ marginTop: '120px' }} data-aos="fade-up">
           <h2 className="section-title">Custom Estimate</h2>
           <p className="section-subtitle">Fine-tune your requirements and get an instant quote.</p>
         </div>
-        <PricingCalculator />
+        <div data-aos="zoom-in">
+          <PricingCalculator />
+        </div>
 
         {/* ALL SERVICES GRID */}
-        <div className="section-header" style={{ marginTop: '120px' }}>
+        <div className="section-header" style={{ marginTop: '120px' }} data-aos="fade-up">
           <h2 className="section-title">A-La-Carte Services</h2>
           <p className="section-subtitle">
             Specific engineering interventions for your existing platforms.
           </p>
         </div>
         <div className="service-grid">
-          {services.map((service) => (
-            <ServiceCard key={service.id} service={service} />
+          {services.map((service, idx) => (
+            <motion.div
+              key={service.id}
+              data-aos="fade-up"
+              data-aos-delay={idx * 50}
+              whileHover={{ y: -5 }}
+            >
+              <ServiceCard service={service} />
+            </motion.div>
           ))}
         </div>
       </div>

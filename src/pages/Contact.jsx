@@ -28,46 +28,37 @@ export default function Contact() {
     setSubmitted(true);
   };
 
-  const fadeUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
   return (
     <main className="contact-page-wrapper">
       <section className="contact-hero">
         <div className="container">
-          <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
-            Let's Build Something <span>Extraordinary</span>
-          </motion.h1>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
-            Whether you're starting from scratch or scaling to new heights, we're here to engineer
-            your success.
-          </motion.p>
+          <div data-aos="fade-up">
+            <h1>
+              Let's Build Something <span>Extraordinary</span>
+            </h1>
+            <p data-aos="fade-up" data-aos-delay="200">
+              Whether you're starting from scratch or scaling to new heights, we're here to engineer
+              your success.
+            </p>
+          </div>
         </div>
       </section>
 
       <section className="contact-content-section">
         <div className="container grid-2">
           {/* COLUMN 1: COMPANY DETAILS */}
-          <motion.div
-            className="contact-info-panel"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-          >
-            <div className="info-block">
+          <div className="contact-info-panel">
+            <div className="info-block" data-aos="fade-right">
               <h3>Direct Contact</h3>
               <p className="info-item">
-                <strong>Email:</strong> hello@hivetechcore.com
+                <strong>Email:</strong> hiveTechCore@gmail.com
               </p>
               <p className="info-item">
                 <strong>Phone:</strong> +91 [Your Number]
               </p>
             </div>
 
-            <div className="info-block">
+            <div className="info-block" data-aos="fade-right" data-aos-delay="200">
               <h3>Headquarters</h3>
               <p className="info-item">
                 Hive Tech Core Solutions
@@ -78,7 +69,7 @@ export default function Contact() {
               </p>
             </div>
 
-            <div className="info-block">
+            <div className="info-block" data-aos="fade-right" data-aos-delay="400">
               <h3>Connect With Us</h3>
               <div className="social-links">
                 <a href="#" className="social-tag">
@@ -94,7 +85,11 @@ export default function Contact() {
             </div>
 
             {data && (
-              <div className="selected-service-badge glass-card">
+              <div
+                className="selected-service-badge glass-card"
+                data-aos="zoom-in"
+                data-aos-delay="600"
+              >
                 <h4>Inquiry Focus:</h4>
                 <p>{data.service}</p>
                 {data.basePrice && (
@@ -102,16 +97,10 @@ export default function Contact() {
                 )}
               </div>
             )}
-          </motion.div>
+          </div>
 
           {/* COLUMN 2: FORM */}
-          <motion.div
-            className="contact-form-panel"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-          >
+          <div className="contact-form-panel" data-aos="fade-left">
             <AnimatePresence mode="wait">
               {!submitted ? (
                 <motion.form
@@ -146,7 +135,7 @@ export default function Contact() {
                 <SuccessUI key="success" />
               )}
             </AnimatePresence>
-          </motion.div>
+          </div>
         </div>
       </section>
     </main>

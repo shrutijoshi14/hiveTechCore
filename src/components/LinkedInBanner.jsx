@@ -4,7 +4,7 @@ const LinkedInBanner = () => {
   return (
     <div className="hq-banner">
       <div className="banner-left">
-        <div className="brand-tag">HIVE TECH CORE</div>
+        <div className="brand-tag">hiveTechCore</div>
         <h1>
           Senior React <br />
           <span>Architect</span>

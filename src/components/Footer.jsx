@@ -1,25 +1,48 @@
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import Logo from '../assets/logo-removebg-preview.png';
 import '../styles/Footer.css';
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <motion.footer
+      className="footer"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1 }}
+    >
       <div className="container footer-container">
         {/* BRAND */}
-        <div className="footer-brand">
-          <h3>hiveTechCore</h3>
-          <p>Building scalable, performance-driven digital solutions for modern businesses.</p>
-        </div>
+        <motion.div
+          className="footer-brand"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+        >
+          <div className="footer-logo-header">
+            <img src={Logo} alt="HiveTechCore Logo" className="footer-logo" />
+            <h3>HiveTechCore</h3>
+          </div>
+          <p>Building Websites. Powering Business Automation.</p>
+        </motion.div>
 
         {/* LINKS */}
-        <div className="footer-links">
+        <motion.div
+          className="footer-links"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+        >
           <h4>Quick Links</h4>
           <ul>
             <li>
               <Link to="/services">Services</Link>
             </li>
             <li>
-              <Link to="/work">Work</Link>
+              <Link to="/work">Projects</Link>
             </li>
             <li>
               <Link to="/about">About Us</Link>
@@ -28,13 +51,19 @@ export default function Footer() {
               <Link to="/contact">Contact</Link>
             </li>
           </ul>
-        </div>
+        </motion.div>
 
         {/* CONTACT */}
-        <div className="footer-contact">
+        <motion.div
+          className="footer-contact"
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+        >
           <h4>Contact</h4>
           <p>📞 +91 XXXXX XXXXX</p>
-          <p>✉️ hivetechcore@gmail.com</p>
+          <p>✉️ hiveTechCore@gmail.com</p>
 
           <div className="social-links">
             <a href="https://instagram.com" target="_blank" rel="noreferrer">
@@ -44,13 +73,19 @@ export default function Footer() {
               GitHub
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* BOTTOM */}
-      <div className="footer-bottom">
-        © {new Date().getFullYear()} hiveTechCore. All rights reserved.
-      </div>
-    </footer>
+      <motion.div
+        className="footer-bottom"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.8, duration: 0.8 }}
+      >
+        © {new Date().getFullYear()} Hive Tech Core. All rights reserved.
+      </motion.div>
+    </motion.footer>
   );
 }

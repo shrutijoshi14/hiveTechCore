@@ -2,15 +2,15 @@
 
 ## WhatsApp Intro Text
 
-"Hi [Name]! This is [Your Name] from Hive Tech Core. I noticed [Specific Business Detail] and thought a premium, high-performance web presence could help you scale. We specialize in engineering secure, high-speed solutions for businesses like yours. Would you be open to a quick chat about how we can help you grow digitally? You can see our latest work here: [Link]"
+"Hi [Name]! This is [Your Name] from hivyTechCore. I noticed [Specific Business Detail] and thought a premium, high-performance web presence could help you scale. We specialize in engineering secure, high-speed solutions for businesses like yours. Would you be open to a quick chat about how we can help you grow digitally? You can see our latest work here: [Link]"
 
 ## Cold Email Template
 
-**Subject: Engineering your digital growth - Hive Tech Core**
+**Subject: Engineering your digital growth - hivyTechCore**
 
 Hi [Name],
 
-I’m [Your Name], founder of Hive Tech Core. We’ve been helping businesses in [Industry] build premium web solutions that don't just look good but drive actual growth.
+I’m [Your Name], founder of hivyTechCore. We’ve been helping businesses in [Industry] build premium web solutions that don't just look good but drive actual growth.
 
 I’m reaching out because [Personalized Reason - e.g., I saw your current site and have some ideas for optimization].
 
@@ -24,7 +24,7 @@ I’ve attached our latest project proposal for your reference. Are you free for
 
 Best,
 [Your Name]
-Hive Tech Core
+hivyTechCore
 
 ## LinkedIn / Instagram Message
 

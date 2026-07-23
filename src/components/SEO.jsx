@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 const SEO = ({ title, description }) => {
   useEffect(() => {
     // Update Document Title
-    document.title = `${title} | Hive Tech Core`;
+    document.title = `${title} | hiveTechCore`;
 
     // Update Meta Description
     const metaDescription = document.querySelector('meta[name="description"]');

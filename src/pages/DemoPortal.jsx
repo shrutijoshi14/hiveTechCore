@@ -2,111 +2,97 @@ import { Link, useParams } from 'react-router-dom';
 import LandingTemplate from '../components/LandingTemplate';
 
 const demoConfigs = {
-  corporate: {
+  'crm-cms': {
     theme: 'corporate',
     hero: {
-      title: 'Global Enterprise Solutions',
-      subtitle: 'Engineering the future of cross-border commerce with secure cloud architectures.',
-      ctaText: 'View Case Studies',
+      title: 'Hive CRM & CMS Platform',
+      subtitle: 'Streamline customer relations, content publishing, lead management, and automated business workflows in one unified dashboard.',
+      ctaText: 'Launch CRM Dashboard',
     },
     services: [
       {
-        title: 'Cloud Infrastructure',
-        description: 'Fault-tolerant systems designed for 99.99% uptime.',
+        title: 'Lead & Contact Management',
+        description: 'Track customer lifecycles, record interactions, and automate follow-ups seamlessly.',
       },
       {
-        title: 'Data Analytics',
-        description: 'Turn raw data into actionable business intelligence.',
+        title: 'Dynamic Content Management',
+        description: 'Publish blog posts, landing pages, and announcements without writing code.',
       },
       {
-        title: 'API Ecosystems',
-        description: 'Connect your internal tools with seamless integrations.',
+        title: 'Automation & Analytics',
+        description: 'Real-time performance metrics, team activity logs, and revenue reporting.',
       },
     ],
-    cta: { title: 'Modernize Your Infrastructure', btnText: 'Schedule Audit' },
+    cta: { title: 'Transform Your Business Operations', btnText: 'Request Live Demo' },
   },
-  ecommerce: {
-    theme: 'ecommerce',
-    hero: {
-      title: 'Artisan Timepieces',
-      subtitle: 'Exquisite craftsmanship meets modern e-commerce engineering.',
-      ctaText: 'Shop Collection',
-    },
-    services: [
-      {
-        title: 'Safe Checkout',
-        description: 'SSL encrypted and PCI-DSS compliant payment processing.',
-      },
-      {
-        title: 'Real-time Tracking',
-        description: 'Monitor your shipment from atelier to doorstep.',
-      },
-      {
-        title: 'Curated Selection',
-        description: 'Only the finest materials for a life well-lived.',
-      },
-    ],
-    cta: { title: 'Elevate Your Style', btnText: 'Join the Club' },
-  },
-  restaurant: {
-    theme: 'restaurant',
-    hero: {
-      title: 'Sage & Salt Bistro',
-      subtitle: 'Traditional flavors reimagined for the modern palate.',
-      ctaText: 'Book a Table',
-    },
-    services: [
-      {
-        title: 'Seasonal Menu',
-        description: 'Ingredients sourced daily from local organic farms.',
-      },
-      { title: 'Wine Cellar', description: 'An award-winning collection of rare vintages.' },
-      {
-        title: 'Private Events',
-        description: 'Intimate dining spaces for your most precious moments.',
-      },
-    ],
-    cta: { title: 'Experience Culinary Art', btnText: 'View Menu' },
-  },
-  'local-business': {
+  'gpshele-dadhare': {
     theme: 'corporate',
     hero: {
-      title: 'Peak Physique Gym',
-      subtitle: 'The premier destination for science-backed physical transformation.',
-      ctaText: 'Get 3 Days Free',
+      title: 'GPShele Dadhare Official Portal',
+      subtitle: 'Modern, responsive, and secure digital platform engineered for GPShele Dadhare with dynamic content management.',
+      ctaText: 'Explore Portal Features',
     },
     services: [
       {
-        title: 'Expert Coaching',
-        description: 'Certified professionals dedicated to your safety and progress.',
+        title: 'Institutional Showcase',
+        description: 'Present achievements, announcements, staff profiles, and official directives with clarity.',
       },
-      { title: 'Modern Equipment', description: 'State-of-the-art weights and cardio technology.' },
-      { title: 'Recovery Spa', description: 'Cryotherapy and massage for optimal muscle health.' },
+      {
+        title: 'Responsive Design',
+        description: 'Optimized performance across smartphones, tablets, and desktop computers.',
+      },
+      {
+        title: 'Secure Content CMS',
+        description: 'Easy-to-use admin panel for quick news publishing and media gallery management.',
+      },
     ],
-    cta: { title: 'Start Your Transformation', btnText: 'Join Now' },
+    cta: { title: 'Need an Official Web Portal?', btnText: 'Contact HiveTechCore' },
   },
-  'personal-brand': {
+  'code-insight-academy': {
     theme: 'ecommerce',
     hero: {
-      title: 'Alex Creative',
-      subtitle: 'Freelance Design & Development for high-impact startups.',
-      ctaText: 'Hire Me',
+      title: 'Code Insight Academy',
+      subtitle: 'Next-generation EdTech platform offering interactive coding courses, student portals, and career tracks.',
+      ctaText: 'Explore Courses',
     },
     services: [
       {
-        title: 'Product Design',
-        description: 'Users-first interfaces that drive engagement and retention.',
+        title: 'Interactive Learning Management',
+        description: 'Structured curriculums, video module delivery, and automated quiz evaluation.',
       },
       {
-        title: 'Web Development',
-        description: 'Pixel-perfect implementations of your brand vision.',
+        title: 'Student & Instructor Portals',
+        description: 'Dedicated dashboards for assignment submission, grading, and batch scheduling.',
       },
       {
-        title: 'Growth Strategy',
-        description: 'Consulting on how to scale your startup effectively.',
+        title: 'Certificates & Progress Tracking',
+        description: 'Automated digital certificate generation upon course completion with verified credentials.',
       },
     ],
-    cta: { title: 'Collaboration Starts Here', btnText: 'Send Message' },
+    cta: { title: 'Build Your Tech Academy Platform', btnText: 'Get Free Consultation' },
+  },
+  'pib-insurance': {
+    theme: 'corporate',
+    hero: {
+      title: 'PIB Insurance Web Portal',
+      subtitle: 'Comprehensive financial & insurance portal with instant quote calculation, claim filing, and policy management.',
+      ctaText: 'Calculate Insurance Quote',
+    },
+    services: [
+      {
+        title: 'Instant Policy Calculator',
+        description: 'Dynamic rate engines for health, motor, commercial, and life insurance policies.',
+      },
+      {
+        title: 'Digital Claims Portal',
+        description: 'Simplified document submission and real-time claim status tracking.',
+      },
+      {
+        title: 'Customer Self-Service',
+        description: 'Download policy certificates, schedule renewals, and manage payment methods online.',
+      },
+    ],
+    cta: { title: 'Modernize Financial & Insurance Portals', btnText: 'Schedule Technical Demo' },
   },
 };
 
